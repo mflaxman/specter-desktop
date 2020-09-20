@@ -1,0 +1,10 @@
+name: Blackify Action
+on: push
+
+jobs:
+  build:
+    name: Blackify
+    runs-on: ubuntu-latest
+    steps:
+    - name: Black Code Formatter
+      uses: lgeiger/black-action@v1.0.1

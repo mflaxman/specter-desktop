@@ -8,6 +8,8 @@ jobs:
     steps:
       - id: file_changes
         uses: trilom/file-changes-action@v1.2.3
+        with:
+          output: ' '
       - name: get_files
         run: |
           echo "${{ steps.file_changes.outputs.files}}"

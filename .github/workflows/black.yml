@@ -7,7 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.2
-      - name: Black Code Formatter
-        uses: lgeiger/black-action@v1.0.1
-        with:
-          args: ". --check"
+      - uses: lgeiger/black-action@v1.0.1
+      - uses: jitterbit/get-changed-files@v1
+        - run: |
+            for changed_file in ${{ steps.files.outputs.all }}; do
+              echo "Do something with this ${changed_file}."
+            done

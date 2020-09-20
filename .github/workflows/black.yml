@@ -8,5 +8,5 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: lgeiger/black-action@v1.0.1
-    - name: Black Code Formatter
-    - run: black --check .
+      name: Black Code Formatter
+      run: black --check .

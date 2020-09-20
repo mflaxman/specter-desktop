@@ -6,8 +6,11 @@ jobs:
   black:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.3.2
       - uses: jitterbit/get-changed-files@v1
+      - name: Get Changed Files
+        run: |
+          echo ::set-env name=CHANGED_FILE::${{ steps.files.outputs.all }}
+      - uses: actions/checkout@v2.3.2
       - uses: lgeiger/black-action@v1.0.1
         with:
-          args: "{{ steps.files.outputs.all }} --check"
+          args: "${{ env.CHANGED_FILES }} --check"

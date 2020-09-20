@@ -9,7 +9,7 @@ jobs:
       - uses: jitterbit/get-changed-files@v1
       - name: Get Changed Files
         run: |
-          echo ::set-env name=CHANGED_FILES::${{ steps.files.outputs.all }}
+          echo ::set-env name=CHANGED_FILES::{{ steps.files.outputs.all }}
       - uses: actions/checkout@v2.3.2
       - uses: lgeiger/black-action@v1.0.1
         with:

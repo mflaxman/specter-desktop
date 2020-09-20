@@ -9,6 +9,8 @@ jobs:
       - id: file_changes
         uses: trilom/file-changes-action@v1.2.3
       - name: get_files
+        run: |
+          echo "{{ steps.file_changes.outputs.files}}"
       - uses: actions/checkout@v2.3.2
       - uses: lgeiger/black-action@v1.0.1
         with:
